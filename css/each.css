@@ -1,0 +1,38 @@
+.container {
+  border: .5rem solid red;
+  margin: .5rem, auto;
+  font-size: 2rem;
+  transition: background-color 1s, width 1s; }
+
+.logo {
+  height: 25rem;
+  width: 25rem;
+  margin: 2rem, auto; }
+
+.batman-logo {
+  background-image: url("/Each-directive/images/batman.png"); }
+
+.spiderman-logo {
+  background-image: url("/Each-directive/images/spiderman.png"); }
+
+.superman-logo {
+  background-image: url("/Each-directive/images/superman.png"); }
+
+.wonder-logo {
+  background-image: url("/Each-directive/images/wonder.png"); }
+
+@media screen and (min-width: 375px) and (max-width: 78px) {
+  .batman {
+    background-color: crimson; } }
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .spiderman {
+    background-color: darkred; } }
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .superman {
+    background-color: grey; } }
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .wonder {
+    background-color: blue; } }

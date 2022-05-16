@@ -1,0 +1,81 @@
+.container {
+    border: .5rem solid red;
+    margin: .5rem, auto;
+    font-size: 2rem;
+    transition: background-color 1s, width 1s;
+}
+
+.logo {
+    height: 25rem;
+    width: 25rem;
+    margin: 2rem, auto;
+}
+
+
+$superheroes: batman, spiderman, superman, wonder; 
+@each $hero in $superheroes {
+    .#{$hero}-logo {
+        background-image: url("/Each-directive/images/#{$hero}.png");
+    }
+       
+};
+
+
+
+/* $breakpoints: (sm: 375px, md: 768px, lg: 120px);
+@each $size, $pb in $breakpoints {
+    @media only screen and (min-width: $pb) {
+        .container-width {
+            width: $pb;
+            &::before{content: "#{$size}";  }
+        }
+    }
+}
+ */
+
+
+/* $breakpoints: (sm: 375px, md: 768px, lg: 120px);
+$container-widths-and-breakpoints: (250px: 375px, 500px: 768px, 750: 1200px);
+@each $width, $pb in $container-widths-and-breakpoints {
+    @media only screen and (min-width: $pb) {
+        .container-width { width: $width;  }
+        }
+    }
+  */
+
+
+
+
+/* $breakpoints: (sm: 375px, md: 768px, lg: 120px);
+$container-widths: (sm:250px, md:500px, lg:750);
+@each $size, $pb in $breakpoints {
+    @media only screen and (min-width: $pb) {
+        .container-width { width: map-get($container-widths, $size);  }
+        }
+    }
+  */
+
+
+
+/* $hero-media: (batman 375px 78px crimson),
+             (spiderman 768px 1000px darkred),
+             (superman 1200px 1400px grey),
+             (wonder 768px 1200px blue);
+
+@each $name, $bp-start, $bp-end, $color in $hero-media {
+    @media screen and (min-width: $bp-start) and (max-width: $bp-end) {
+        .#{$name} {background-color: $color;};
+    }
+} */
+
+
+$hero-media: (1 375px 78px crimson),
+             (2 768px 1000px darkred),
+             (3 1200px 1400px grey),
+             (4 768px 1200px blue);
+
+@each $i, $bp-start, $bp-end, $color in $hero-media {
+    @media screen and (min-width: $bp-start) and (max-width: $bp-end) {
+        .#{nth($superheroes, $i)} {background-color: $color;};
+    }
+}
